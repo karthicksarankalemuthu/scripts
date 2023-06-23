@@ -16,7 +16,7 @@ var styles=`#con{
     text-align: center;
     font-size: 25px;
     font-weight: 800;
-   color:#000000;
+   //color:#000000;
 }
 #th_des{
     margin-left: 10px;
@@ -34,8 +34,8 @@ var styles=`#con{
     height: 30px;
     border-radius: 5px;
     margin-left: 10px;
-   background-color:#000000;
-    color:white;
+  // background-color:#000000;
+   // color:white;
 }
 
 #close{
@@ -65,11 +65,11 @@ close.innerHTML="&times;"
 
 const th_title = document.createElement("p");
 th_title.id = "th_title";
-th_title.innerHTML="🎉 Refer & Get 10% Offer"
+th_title.innerHTML=""
 
 const th_des = document.createElement("p");
 th_des.id = "th_des";
-th_des.innerHTML="Invite your friends to get ₹100 off For each friend you refer youll get 20% offer"
+th_des.innerHTML=""
 
 var input = document.createElement("input");
 input.type = "text"
@@ -77,7 +77,7 @@ input.placeholder='Enter The Email'
 input.id="text"
 const th_btn = document.createElement("button");
 th_btn.id = "button";
-th_btn.innerHTML='get 10% off';
+th_btn.innerHTML='';
 
 
 document.body.appendChild(container);
@@ -101,6 +101,8 @@ const url=window.location.href;
   })
 
   const th_email= document.getElementById("text");
+  const th_button= document.getElementById("button");
+  const th_con= document.getElementById("con");
 
   th_btn.addEventListener("click",async(e)=>{
  
@@ -123,14 +125,49 @@ const url=window.location.href;
      // console.log(text.value)
      let rsu=await res.json()
       let val=rsu?.msg;
-     th_email.value=val;
+      th_email.value=val;
      th_btn.innerHTML="copy"}
       if(th_btn.innerHTML="copy"){
         navigator.clipboard.writeText(th_email.value)
         th_btn.innerHTML="copied"
         
-      }
-      
-     
+      } 
          
    })
+
+
+
+   async function getui(){
+    let res= await fetch("/apps/app/s/get_store_ui",
+    {
+      method:"GET",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept':'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'ngrok-skip-browser-warning':'69420'
+      }})
+    res=await res.json()
+    const en=res[0].enable;
+     if(en==true){
+       console.log(res)
+       th_title.innerHTML=res[0].title;
+       th_des.innerHTML=res[0].des;
+       th_button.innerHTML=res[0].btn_text;
+       th_title.style.color=res[0].text_color;
+       th_des.style.color=res[0].text_color;
+       th_button.style.color=res[0].text_color;
+       th_con.style.backgroundColor=res[0].popup_bg;
+       th_button.style.backgroundColor=res[0].btn_bg;
+      
+     }
+     else{
+      btn.style.visibility="hidden";
+     }
+    
+      }
+    
+    
+      
+      getui()
+    
