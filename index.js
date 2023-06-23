@@ -62,29 +62,29 @@ const close = document.createElement("button");
 close.id = "close";
 close.innerHTML="&times;"
 
-const title = document.createElement("p");
-title.id = "title";
-title.innerHTML="🎉 Refer & Get 10% Offer"
+const th_title = document.createElement("p");
+th_title.id = "title";
+th_title.innerHTML="🎉 Refer & Get 10% Offer"
 
-const des = document.createElement("p");
-des.id = "des";
-des.innerHTML="Invite your friends to get ₹100 off For each friend you refer youll get 20% offer"
+const th_des = document.createElement("p");
+th_des.id = "des";
+th_des.innerHTML="Invite your friends to get ₹100 off For each friend you refer youll get 20% offer"
 
 var input = document.createElement("input");
 input.type = "text"
 input.placeholder='Enter The Email'
 input.id="text"
-const btn = document.createElement("button");
-btn.id = "button";
-btn.innerHTML='get 10% off';
+const th_btn = document.createElement("button");
+th_btn.id = "button";
+th_btn.innerHTML='get 10% off';
 
 
 document.body.appendChild(container);
 container.appendChild(close);
-container.appendChild(title);
-container.appendChild(des);
+container.appendChild(th_title);
+container.appendChild(th_des);
 container.appendChild(input);
-container.appendChild(btn);
+container.appendChild(th_btn);
 
 const url=window.location.href;
   const parts = url.split('/');
@@ -99,10 +99,10 @@ const url=window.location.href;
      container.style.visibility ="hidden"
   })
 
-  btn.addEventListener("click",async(e)=>{
+  th_btn.addEventListener("click",async(e)=>{
  
    
-   if(btn.innerHTML="get 10% off"){
+   if(th_btn.innerHTML="get 10% off"){
    e.preventDefault()
     let res= await fetch("/apps/app/s/store_data",{
       method:"POST",
@@ -121,10 +121,10 @@ const url=window.location.href;
      let rsu=await res.json()
       let val=rsu?.msg;
       text.value=val;
-      btn.innerHTML="copy"}
-      if(btn.innerHTML="copy"){
+     th_btn.innerHTML="copy"}
+      if(th_btn.innerHTML="copy"){
         navigator.clipboard.writeText(text.value)
-        btn.innerHTML="copied"
+        th_btn.innerHTML="copied"
         
       }
       
