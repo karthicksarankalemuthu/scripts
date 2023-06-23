@@ -19,13 +19,15 @@ var styles=`#con{
    //color:#000000;
 }
 #th_des{
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-top:20px;
 }
 #text{
     width: 230px;
     height: 30px;
     border-radius: 10px;
-    margin-left: 5px;
+    margin-left: 15px;
+    margin-top:30px;
     outline: none;
     border: 2px solid #000000;
 }
@@ -44,7 +46,8 @@ var styles=`#con{
     border-radius:50%;
    background-color:rgb(214, 54, 54);
     color:#000000;
-    font-size: 20px;
+    font-size:15px;
+    font-weight:500;
     outline:none;
     border:none;
     margin-left:340px;
@@ -170,4 +173,12 @@ const url=window.location.href;
     
       
       getui()
+    
+    
+    
+    
+    
+    
+    
+    
     
