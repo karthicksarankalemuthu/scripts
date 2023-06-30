@@ -158,6 +158,8 @@ container.appendChild(th_btn);
      if(en==true && destination=='inline'){
        console.log(res)
       container.style.visibility="visible";
+      container.style.marginLeft=60;
+      close.style.visibility="hidden"
       Shopify.Checkout.OrderStatus.addContentBox(container)
      }
      else{
