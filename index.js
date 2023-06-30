@@ -146,9 +146,7 @@ container.appendChild(th_btn);
     res=await res.json()
     const en=res[0].enable;
     const destination=res[0].destination;
-     if(en==true && destination=='inline'){
-       console.log(res)
-       container.style.visibility="visible";
+      
        th_title.innerHTML=res[0].title;
        th_des.innerHTML=res[0].des;
        th_button.innerHTML=res[0].btn_text;
@@ -157,6 +155,9 @@ container.appendChild(th_btn);
        th_button.style.color=res[0].text_color;
        th_con.style.backgroundColor=res[0].popup_bg;
        th_button.style.backgroundColor=res[0].btn_bg;
+     if(en==true && destination=='inline'){
+       console.log(res)
+      container.style.visibility="visible";
       Shopify.Checkout.OrderStatus.addContentBox(container)
      }
      else{
