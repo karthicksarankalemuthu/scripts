@@ -90,6 +90,9 @@ container.appendChild(th_des);
 container.appendChild(input);
 container.appendChild(th_btn);
 
+Shopify.Checkout.OrderStatus.addContentBox(`${container}`)
+
+
 const url=window.location.href;
   const parts = url.split('/');
   const thank=parts.at(-1)
