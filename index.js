@@ -131,7 +131,9 @@ container.appendChild(th_btn);
          
    })
 
-
+const url=window.location.href;
+    const parts = url.split('/');
+   const thank=parts.at(-1)
 
    async function getui(){
     let res= await fetch("/apps/app/s/get_store_ui",
@@ -155,6 +157,7 @@ container.appendChild(th_btn);
        th_button.style.color=res[0].text_color;
        th_con.style.backgroundColor=res[0].popup_bg;
        th_button.style.backgroundColor=res[0].btn_bg;
+       if(thank=='thank_you'){
      if(en==true && destination=='inline'){
        console.log(res)
       container.style.visibility="visible";
@@ -179,6 +182,10 @@ container.appendChild(th_btn);
     container.style.zIndex=5;
   }
      }
+       }
+       else{
+          container.style.visibility='hidden'; 
+       }
     
       }
     
