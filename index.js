@@ -168,6 +168,8 @@ container.appendChild(th_btn);
 
   if(thank=='thank_you'){
     container.style.visibility='visible';
+    input.style.marginTop=10;
+    th_des.style.marginTop=10;
     container.style.position='fixed'; 
     container.style.top=200;
     container.style.left=470;
