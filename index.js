@@ -4,7 +4,7 @@ let css = document.createElement('style');
 var styles=`#con{
     width: 370px;
     height: 250px;
-    visibility:visible;
+    visibility:hidden;
     border-radius: 20px;
    /* position: fixed; 
     top:200px;
@@ -90,16 +90,6 @@ container.appendChild(th_des);
 container.appendChild(input);
 container.appendChild(th_btn);
 
-Shopify.Checkout.OrderStatus.addContentBox(container)
-
-
-const url=window.location.href;
-  const parts = url.split('/');
-  const thank=parts.at(-1)
-
-  if(thank=='thank_you'){
-    container.style.visibility='visible';
-  }
 
   
   close.addEventListener("click",()=>{
@@ -155,8 +145,10 @@ const url=window.location.href;
       }})
     res=await res.json()
     const en=res[0].enable;
-     if(en==true){
+    const destination=res[0].destination;
+     if(en==true && destination=='inline'){
        console.log(res)
+       container.style.visibility="visible";
        th_title.innerHTML=res[0].title;
        th_des.innerHTML=res[0].des;
        th_button.innerHTML=res[0].btn_text;
@@ -165,10 +157,23 @@ const url=window.location.href;
        th_button.style.color=res[0].text_color;
        th_con.style.backgroundColor=res[0].popup_bg;
        th_button.style.backgroundColor=res[0].btn_bg;
-      
+       container.style.marginleft=50px;
+      Shopify.Checkout.OrderStatus.addContentBox(container)
      }
      else{
-      container.style.visibility="hidden";
+      container.style.visibility="visible";
+     const url=window.location.href;
+    const parts = url.split('/');
+   const thank=parts.at(-1)
+
+  if(thank=='thank_you'){
+    container.style.visibility='visible';
+    container.style.position: fixed; 
+    container.style.top:200px;
+    container.style.left:470px;
+   container.style.box-shadow: 5px 5px 15px #645f5f;
+    container.style.z-index:5;
+  }
      }
     
       }
