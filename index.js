@@ -157,7 +157,7 @@ container.appendChild(th_btn);
        th_button.style.color=res[0].text_color;
        th_con.style.backgroundColor=res[0].popup_bg;
        th_button.style.backgroundColor=res[0].btn_bg;
-       container.style.marginleft=50px;
+       container.style.marginLeft=50px;
       Shopify.Checkout.OrderStatus.addContentBox(container)
      }
      else{
