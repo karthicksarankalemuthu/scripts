@@ -158,7 +158,7 @@ container.appendChild(th_btn);
      if(en==true && destination=='inline'){
        console.log(res)
       container.style.visibility="visible";
-      container.style.marginLeft=60;
+      container.style.marginLeft='60px';
       close.style.visibility="hidden"
       Shopify.Checkout.OrderStatus.addContentBox(container)
      }
@@ -170,8 +170,8 @@ container.appendChild(th_btn);
 
   if(thank=='thank_you'){
     container.style.visibility='visible';
-    input.style.marginTop=10;
-    th_des.style.marginTop=10;
+    //input.style.marginTop=10;
+   // th_des.style.marginTop=10;
     container.style.position='fixed'; 
     container.style.top='200px';
     container.style.left='470px';
