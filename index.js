@@ -171,9 +171,9 @@ container.appendChild(th_btn);
     input.style.marginTop=10;
     th_des.style.marginTop=10;
     container.style.position='fixed'; 
-    container.style.top=200;
-    container.style.left=470;
-   //container.style.box-shadow=5 5 15 #645f5f;
+    container.style.top='200px';
+    container.style.left='470px';
+    container.style.boxShadow="5px 5px 15px #645f5f";
     container.style.zIndex=5;
   }
      }
