@@ -4,13 +4,13 @@ let css = document.createElement('style');
 var styles=`#con{
     width: 370px;
     height: 250px;
-    visibility:hidden;
+    visibility:visible;
     border-radius: 20px;
-    position: fixed; 
+   /* position: fixed; 
     top:200px;
     left:470px;
     box-shadow: 5px 5px 15px #645f5f;
-    z-index:5;
+    z-index:5;*/
 }
 #th_title{
     text-align: center;
