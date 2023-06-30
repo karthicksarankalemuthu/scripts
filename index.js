@@ -167,11 +167,11 @@ container.appendChild(th_btn);
 
   if(thank=='thank_you'){
     container.style.visibility='visible';
-    container.style.position: fixed; 
-    container.style.top:200px;
-    container.style.left:470px;
-   container.style.box-shadow: 5px 5px 15px #645f5f;
-    container.style.z-index:5;
+    container.style.position=fixed; 
+    container.style.top=200px;
+    container.style.left=470px;
+   container.style.box-shadow=5px 5px 15px #645f5f;
+    container.style.z-index=5;
   }
      }
     
