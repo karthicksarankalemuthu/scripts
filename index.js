@@ -157,7 +157,7 @@ const url=window.location.href;
        th_button.style.color=res[0].text_color;
        th_con.style.backgroundColor=res[0].popup_bg;
        th_button.style.backgroundColor=res[0].btn_bg;
-       if(thank=='thank_you'){
+       if(Shopify.Checkout.isOrderStatusPage==true){
      if(en==true && destination=='inline'){
        console.log(res)
       container.style.visibility="visible";
@@ -171,7 +171,7 @@ const url=window.location.href;
     const parts = url.split('/');
    const thank=parts.at(-1)
 
-  if(thank=='thank_you'){
+  if(Shopify.Checkout.isOrderStatusPage==true){
     container.style.visibility='visible';
     //input.style.marginTop=10;
    // th_des.style.marginTop=10;
