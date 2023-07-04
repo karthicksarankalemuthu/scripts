@@ -162,8 +162,9 @@ const url=window.location.href;
        console.log(res)
       container.style.visibility="visible";
       container.style.marginLeft='0px';
-      container.style.width='532px';
-      container.style.height='284px';
+      container.style.width='500px';
+      container.style.height='250px';
+      container.style.borderRadius='3px';
       close.style.visibility="hidden"
       Shopify.Checkout.OrderStatus.addContentBox(container)
      }
