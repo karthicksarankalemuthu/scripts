@@ -157,11 +157,13 @@ const url=window.location.href;
        th_button.style.color=res[0].text_color;
        th_con.style.backgroundColor=res[0].popup_bg;
        th_button.style.backgroundColor=res[0].btn_bg;
-       if(Shopify.Checkout.isOrderStatusPage==true){
+       if(Shopify.Checkout.isOrderStatusPage==true || Shopify.Checkout.isCheckoutOne==true){
      if(en==true && destination=='inline'){
        console.log(res)
       container.style.visibility="visible";
-      container.style.marginLeft='60px';
+      container.style.marginLeft='0px';
+      container.style.width='532px';
+      container.style.height='284px';
       close.style.visibility="hidden"
       Shopify.Checkout.OrderStatus.addContentBox(container)
      }
@@ -171,7 +173,7 @@ const url=window.location.href;
     const parts = url.split('/');
    const thank=parts.at(-1)
 
-  if(Shopify.Checkout.isOrderStatusPage==true){
+  if(Shopify.Checkout.isOrderStatusPage==true || Shopify.Checkout.isCheckoutOne==true){
     container.style.visibility='visible';
     //input.style.marginTop=10;
    // th_des.style.marginTop=10;
