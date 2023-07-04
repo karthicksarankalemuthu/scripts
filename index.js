@@ -157,8 +157,8 @@ const url=window.location.href;
        th_button.style.color=res[0].text_color;
        th_con.style.backgroundColor=res[0].popup_bg;
        th_button.style.backgroundColor=res[0].btn_bg;
-       if(Shopify.Checkout.isOrderStatusPage==true || Shopify.Checkout.isCheckoutOne==true){
-     if(en==true && destination=='inline'){
+       if((Shopify.Checkout.isOrderStatusPage==true || Shopify.Checkout.isCheckoutOne==true ) && en==true ){
+     if(destination=='inline'){
        console.log(res)
       container.style.visibility="visible";
       container.style.marginLeft='0px';
