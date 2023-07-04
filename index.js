@@ -163,9 +163,9 @@ const url=window.location.href;
       container.style.visibility="visible";
       container.style.marginLeft='0px';
       container.style.width='500px';
-      container.style.height='284px';
+      container.style.height='250px';
       container.style.borderRadius='5px';
-      input.style.marginLeft='30px';
+      input.style.marginLeft='60px';
      th_btn.style.marginLeft='30px';
       close.style.visibility="hidden";
       Shopify.Checkout.OrderStatus.addContentBox(container)
